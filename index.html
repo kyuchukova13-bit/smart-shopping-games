@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Академия: Умни пари, Здраво тяло</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto+Condensed:wght@400;700&display=swap');
+
+        :root {
+            --dark-blue: #1a428a;
+            --ans-red: #e11d48;
+            --gold: #f2c94c;
+            --health-green: #3cb44b;
+            --health-orange: #f58231;
+        }
+
+        body, html {
+            margin: 0; 
+            padding: 0; 
+            height: 100vh;
+            font-family: 'Roboto Condensed', sans-serif;
+            background: radial-gradient(circle at top center, #1a428a 0%, #000000 100%);
+            color: white;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center;
+            overflow: hidden;
+        }
+
+        header {
+            text-align: center;
+            margin-top: 3vh;
+            margin-bottom: 2vh;
+        }
+
+        .main-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 55px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .c1 { color: #e6194B; } .c2 { color: #3cb44b; } .c3 { color: #ffe119; } .c4 { color: #4363d8; }
+        .c5 { color: #f58231; } .c6 { color: #911eb4; } .c7 { color: #46f0f0; } .c8 { color: #f032e6; }
+
+        .sub-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
+            color: var(--gold);
+            letter-spacing: 4px;
+            margin-top: 5px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            max-width: 1050px;
+            width: 90%;
+            flex-grow: 1;
+            padding-bottom: 4vh;
+            align-content: center;
+        }
+
+        .game-card {
+            background: #ffffff;
+            border-radius: 25px;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            position: relative;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5), inset 0 0 0 6px rgba(255,255,255,0.5);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 190px;
+        }
+
+        .game-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7), inset 0 0 0 6px rgba(255,255,255,0.8);
+        }
+
+        .card-f1 { border: 10px solid var(--gold); }
+        .card-f2 { border: 10px solid var(--ans-red); }
+        .card-h1 { border: 10px solid var(--health-green); }
+        .card-h2 { border: 10px solid var(--health-orange); }
+
+        .category-badge {
+            position: absolute;
+            top: -18px;
+            padding: 4px 22px;
+            border-radius: 20px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            border: 3px solid white;
+            text-transform: uppercase;
+        }
+
+        .badge-finance { background: var(--dark-blue); }
+        .badge-health { background: var(--health-green); }
+
+        .icon-container { font-size: 45px; margin-bottom: 5px; }
+
+        .game-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 28px;
+            color: var(--dark-blue);
+            margin: 5px 0;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .game-desc {
+            font-size: 15px;
+            color: #444;
+            font-weight: 700;
+            margin-top: 8px;
+            line-height: 1.2;
+            max-width: 90%;
+        }
+
+        .divider { width: 40%; height: 3px; background: #eee; margin: 10px auto; }
+
+        footer {
+            padding: 15px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 800px) {
+            body { overflow-y: auto; }
+            .games-grid { grid-template-columns: 1fr; gap: 40px; }
+            .game-card { height: auto; padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="main-title">
+            <span class="c1">А</span><span class="c2">К</span><span class="c3">А</span><span class="c4">Д</span><span class="c5">Е</span><span class="c6">М</span><span class="c7">И</span><span class="c8">Я</span>
+        </div>
+        <div class="sub-title">УМНИ ПАРИ & ЗДРАВО ТЯЛО</div>
+    </header>
+
+    <div class="games-grid">
+        
+        <a href="https://kyuchukova13-bit.github.io/euro-bingo-game/" target="_blank" class="game-card card-f1">
+            <div class="category-badge badge-finance">Финанси</div>
+            <div class="icon-container">🎰💶</div>
+            <div class="game-title">Финансово Бинго</div>
+            <div class="divider"></div>
+            <div class="game-desc">Разпознай евро банкнотите и монетите и спечели играта!</div>
+        </a>
+
+        <a href="https://kyuchukova13-bit.github.io/SuperMarket/" target="_blank" class="game-card card-f2">
+            <div class="category-badge badge-finance">Финанси</div>
+            <div class="icon-container">🏪🧾</div>
+            <div class="game-title">Майстор на Касата</div>
+            <div class="divider"></div>
+            <div class="game-desc">Пазарувай по списък, смятай бързо и върни точното ресто!</div>
+        </a>
+
+        <a href="https://kyuchukova13-bit.github.io/zdravoslovno_hranene_dvuboi/" target="_blank" class="game-card card-h1">
+            <div class="category-badge badge-health">Здраве</div>
+            <div class="icon-container">🧠🍏</div>
+            <div class="game-title">Здравословен Куиз</div>
+            <div class="divider"></div>
+            <div class="game-desc">Отборен двубой с интересни въпроси за полезната храна.</div>
+        </a>
+
+        <a href="https://kyuchukova13-bit.github.io/edu-games/zdavoslovna_misia/" target="_blank" class="game-card card-h2">
+            <div class="category-badge badge-health">Здраве</div>
+            <div class="icon-container">🛒⏱️</div>
+            <div class="game-title">Бързо Пазаруване</div>
+            <div class="divider"></div>
+            <div class="game-desc">Напълни количката със здраве и вземи своята грамота!</div>
+        </a>
+
+    </div>
+
+    <footer>
+        Автор: Дочка Кючукова | Проект за национален конкурс
+    </footer>
+
+</body>
+</html>

@@ -16,33 +16,29 @@
         }
 
         body, html {
-            margin: 0; 
-            padding: 0; 
+            margin: 0; padding: 0; 
             height: 100vh;
             font-family: 'Roboto Condensed', sans-serif;
             background: radial-gradient(circle at top center, #1a428a 0%, #000000 100%);
             color: white;
-            display: flex; 
-            flex-direction: column; 
-            align-items: center;
-            overflow: hidden;
+            display: flex; flex-direction: column; align-items: center;
+            overflow: hidden; /* Гарантира липса на скрол */
         }
 
         header {
             text-align: center;
-            margin-top: 3vh;
+            margin-top: 2.5vh;
             margin-bottom: 2vh;
         }
 
         .main-title {
             font-family: 'Oswald', sans-serif;
-            font-size: 55px;
+            font-size: 60px;
             font-weight: 700;
             text-transform: uppercase;
             margin: 0;
-            display: flex;
-            justify-content: center;
-            gap: 5px;
+            display: flex; justify-content: center; gap: 6px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
 
         .c1 { color: #e6194B; } .c2 { color: #3cb44b; } .c3 { color: #ffe119; } .c4 { color: #4363d8; }
@@ -50,44 +46,43 @@
 
         .sub-title {
             font-family: 'Oswald', sans-serif;
-            font-size: 22px;
+            font-size: 24px;
             color: var(--gold);
             letter-spacing: 4px;
-            margin-top: 5px;
+            margin-top: 2px;
         }
 
+        /* Широка мрежа, запълваща екрана */
         .games-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            max-width: 1050px;
-            width: 90%;
+            gap: 30px;
+            max-width: 1300px; /* По-широко за "разлят" ефект */
+            width: 95%;
             flex-grow: 1;
-            padding-bottom: 4vh;
+            padding-bottom: 5vh;
             align-content: center;
         }
 
         .game-card {
             background: #ffffff;
             border-radius: 25px;
-            padding: 20px;
+            padding: 20px 30px;
             text-align: center;
             text-decoration: none;
             position: relative;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.5), inset 0 0 0 6px rgba(255,255,255,0.5);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
             transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 190px;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            height: 190px; /* Оптимизирана височина за липса на скрол */
         }
 
         .game-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.7), inset 0 0 0 6px rgba(255,255,255,0.8);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8);
         }
 
+        /* Цветови рамки - плътни и ярки */
         .card-f1 { border: 10px solid var(--gold); }
         .card-f2 { border: 10px solid var(--ans-red); }
         .card-h1 { border: 10px solid var(--health-green); }
@@ -95,11 +90,11 @@
 
         .category-badge {
             position: absolute;
-            top: -18px;
-            padding: 4px 22px;
-            border-radius: 20px;
+            top: -20px;
+            padding: 5px 25px;
+            border-radius: 30px;
             font-family: 'Oswald', sans-serif;
-            font-size: 16px;
+            font-size: 17px;
             font-weight: bold;
             color: white;
             border: 3px solid white;
@@ -109,11 +104,11 @@
         .badge-finance { background: var(--dark-blue); }
         .badge-health { background: var(--health-green); }
 
-        .icon-container { font-size: 45px; margin-bottom: 5px; }
+        .icon-container { font-size: 50px; margin-bottom: 5px; }
 
         .game-title {
             font-family: 'Oswald', sans-serif;
-            font-size: 28px;
+            font-size: 30px;
             color: var(--dark-blue);
             margin: 5px 0;
             text-transform: uppercase;
@@ -121,27 +116,30 @@
         }
 
         .game-desc {
-            font-size: 15px;
-            color: #444;
+            font-size: 16px;
+            color: #333;
             font-weight: 700;
             margin-top: 8px;
             line-height: 1.2;
             max-width: 90%;
         }
 
-        .divider { width: 40%; height: 3px; background: #eee; margin: 10px auto; }
+        .divider { width: 45%; height: 4px; background: #eee; margin: 12px auto; }
 
-        footer {
-            padding: 15px;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 16px;
+        .footer-credits {
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 22px;
             font-weight: bold;
+            font-family: 'Oswald', sans-serif;
         }
 
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
             body { overflow-y: auto; }
-            .games-grid { grid-template-columns: 1fr; gap: 40px; }
-            .game-card { height: auto; padding: 30px; }
+            .games-grid { grid-template-columns: 1fr; }
+            .footer-credits { position: static; margin: 20px 0; }
         }
     </style>
 </head>
@@ -159,40 +157,40 @@
         <a href="https://kyuchukova13-bit.github.io/euro-bingo-game/" target="_blank" class="game-card card-f1">
             <div class="category-badge badge-finance">Финанси</div>
             <div class="icon-container">🎰💶</div>
-            <div class="game-title">Финансово Бинго</div>
+            <h2 class="game-title">Финансово Бинго</h2>
             <div class="divider"></div>
-            <div class="game-desc">Разпознай евро банкнотите и монетите и спечели играта!</div>
+            <p class="game-desc">Разпознай евро банкнотите и монетите и спечели играта!</p>
         </a>
 
         <a href="https://kyuchukova13-bit.github.io/SuperMarket/" target="_blank" class="game-card card-f2">
             <div class="category-badge badge-finance">Финанси</div>
             <div class="icon-container">🏪🧾</div>
-            <div class="game-title">Майстор на Касата</div>
+            <h2 class="game-title">Майстор на Касата</h2>
             <div class="divider"></div>
-            <div class="game-desc">Пазарувай по списък, смятай бързо и върни точното ресто!</div>
+            <p class="game-desc">Пазарувай по списък, смятай бързо и върни точното ресто!</p>
         </a>
 
         <a href="https://kyuchukova13-bit.github.io/zdravoslovno_hranene_dvuboi/" target="_blank" class="game-card card-h1">
             <div class="category-badge badge-health">Здраве</div>
             <div class="icon-container">🧠🍏</div>
-            <div class="game-title">Здравословен Куиз</div>
+            <h2 class="game-title">Здравословен Куиз</h2>
             <div class="divider"></div>
-            <div class="game-desc">Отборен двубой с интересни въпроси за полезната храна.</div>
+            <p class="game-desc">Отборен двубой с интересни въпроси за полезната храна.</p>
         </a>
 
         <a href="https://kyuchukova13-bit.github.io/edu-games/zdavoslovna_misia/" target="_blank" class="game-card card-h2">
             <div class="category-badge badge-health">Здраве</div>
             <div class="icon-container">🛒⏱️</div>
-            <div class="game-title">Бързо Пазаруване</div>
+            <h2 class="game-title">Бързо Пазаруване</h2>
             <div class="divider"></div>
-            <div class="game-desc">Напълни количката със здраве и вземи своята грамота!</div>
+            <p class="game-desc">Напълни количката със здраве и вземи своята грамота!</p>
         </a>
 
     </div>
 
-    <footer>
-        Автор: Дочка Кючукова | Проект за национален конкурс
-    </footer>
+    <div class="footer-credits">
+        Автор: Дочка Кючукова
+    </div>
 
 </body>
 </html>
